@@ -28,9 +28,7 @@ export default function PdfFilesUpload(props: {
           file ? "" : "border-lime-500 border-2 border-dashed"
         } flex flex-col items-center justify-centerv overflow-hidden`}
       >
-        {file ? (
-          <></>
-        ) : (
+        {!file && (
           <label className="outline-none relative cursor-pointer flex flex-col items-center justify-center h-full w-full">
             <>
               <div className="flex flex-col items-center">
@@ -91,9 +89,6 @@ export default function PdfFilesUpload(props: {
             onLoadSuccess={onDocumentLoadSuccess}
             noData
             className={" space-y-4 w-full"}
-            //   loading={
-            //     <Icon name="loader" className="text-black animate-spin h-5 w-5" />
-            //   }
           >
             {Array.apply(null, Array(numPages))
               .map((x, i) => i + 1)
